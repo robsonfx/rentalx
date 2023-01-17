@@ -19,9 +19,9 @@ class CreateCategoryUseCase {
     }
 
     //metodo execute por padrão em um service.
-    execute({ description, name  }: IRequest): void {
+    async execute({ description, name  }: IRequest): Promise<void> {
 
-        const categoryAlreadyExists = this.categoriesRepository.findByName(name);
+        const categoryAlreadyExists = await this.categoriesRepository.findByName(name);
 
         if(categoryAlreadyExists) {
             throw new Error("Category Already exists!");
