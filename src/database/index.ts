@@ -2,7 +2,6 @@ import { createConnection, getConnectionOptions } from 'typeorm';
 
 interface IOptions {
   host: string;
-  name: string;
 }
 
 getConnectionOptions().then(options => {
