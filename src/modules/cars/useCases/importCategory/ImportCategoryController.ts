@@ -13,7 +13,7 @@ class ImportCategoryController {
         const importCategoryUserCase = container.resolve(ImportCategoryUseCase);
         await importCategoryUserCase.execute(file);
         
-        return response.send();
+        return response.status(201).send();
     }
 }
 
