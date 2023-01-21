@@ -1,8 +1,8 @@
 import { inject, injectable } from "tsyringe";
-import { deleteFile } from "../../../../utils/files";
+import { deleteFile } from "@utils/files";
 
 
-import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 
 
 
