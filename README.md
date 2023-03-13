@@ -1,3 +1,72 @@
+# Cadastro de Carros
+
+** Requisitos Funcionais
+Dever ser Possível cadastrar um novo carro;
+Deve ser possível listar todas as categorias;
+
+** Requisitos Não Funcionais
+
+
+** Regra de Negócio
+Não deve ser possível cadastrar um carro com uma placa já existente;
+Não deve sr possível aterar a placa de um carro já cadastrado;
+O carro deve ser cadastrado com disponibilidade por padrão (true);
+O usuario responsável pela cadastro deve ser administrador;
+
+# Listagem de Carros
+
+**RF**
+Deve ser possível ser listar todos os carros disponíveis;
+Deve ser possível listar todos os carros disponível pelo nome da categoria;
+Deve ser possível listar todos os carros disponível pelo nome da marca;
+Deve ser possível listar todos os carros disponível pelo nome do carro;
+**RN**
+O usuário não precisa estar logado no sistema para ver carros disponíveis;
+
+
+
+
+# Cadastro de Especificação do Carro;
+
+**RF**
+Dever ser possível cadastrar uma especificação para um carro;
+Dever ser Possível listar todas as especificações;
+Dever se prossível listar todos os carros;
+**RN**
+Não deve ser possível cadastrar uma especificação para um carro não cadastrado;
+Não deve ser possível castrar uam especificação já existente para o mesmo carro;
+O usuario responsável pelo cadastro de ver um usuário administrador;
+
+
+# Cadastro de Imagens do Carro
+
+**RF**
+Deve ser possível cadastrar a imagem do carro;
+Deve ser possível listar todos os carros;
+
+**RNF**
+Utilizar o multer para upload dos arquivos;
+
+**RN**
+O usuário deve poder cadastrar mais de uma imagem para o mesmo carro;
+O usuário responsável pelo cadastro deve ser um usuário administrador;
+
+
+# Aluguel de carro
+
+**RF**
+Deve ser possível cadastrar um aluguel;
+
+**RNF**
+
+
+**RN**
+O aluguel deve ter duração mínima de 24h;
+Não deve ser possível ser cadastrado um novo aluguel caso já existe uma aberto para o mesmo usuario;
+Não deve ser possível ser cadastrado um novo aluguel para um carro já alugado;
+
+
+
 # Configurações do ESLint e Prettier - Trilha Node.js
 https://www.notion.so/ESLint-e-Prettier-Trilha-Node-js-d3f3ef576e7f45dfbbde5c25fa662779
 
