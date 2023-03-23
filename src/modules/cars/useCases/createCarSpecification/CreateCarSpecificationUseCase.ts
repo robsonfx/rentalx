@@ -1,8 +1,11 @@
-import { AppError } from "@shared/errors/AppError";
-import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
-import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository";
-import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 import { inject, injectable } from "tsyringe";
+import { Car } from "@modules/cars/infra/typeorm/entities/Car";
+import { SpecificationsRepository } from "@modules/cars/infra/typeorm/repositories/SpecificationsRepository";
+import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository";
+import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
+import { AppError } from "@shared/errors/AppError";
+import { CarsRepository } from "@modules/cars/infra/typeorm/repositories/CarsRepository";
+
 
 
 interface IRequest {
@@ -16,7 +19,8 @@ class CreateCarSpecificationUseCase {
     constructor(
         @inject("CarsRepository")
         private carsRepository: ICarsRepository,
-        @inject("SpecificationsRepository")
+
+        @inject("SpecificationsRepository") 
         private specificationsRepository: ISpecificationsRepository
     ) {}
 
@@ -34,7 +38,7 @@ class CreateCarSpecificationUseCase {
         carExists.specifications = specifications;
 
         await this.carsRepository.create(carExists);
-
+        
         return carExists;
     }
 }

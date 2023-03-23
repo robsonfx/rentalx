@@ -6,7 +6,7 @@ import { Specification } from "./Specification";
 @Entity("cars")
 class Car {
     @PrimaryColumn()
-    id: string;
+    id?: string;
 
     @Column()
     name: string;
@@ -40,7 +40,7 @@ class Car {
     @JoinTable({
         name: "specifications_cars",
         joinColumns: [{name: "car_id"}],
-        inverseJoinColumns: [{ name: "specification_id"}] 
+        inverseJoinColumns: [{ name: "specification_id"}],
     })
     specifications: Specification[];
 
