@@ -8,20 +8,18 @@ import createConnection from "@shared/infra/typeorm";
 
 let connection: Connection;
 describe("Create Category Controller", () => {
-    beforeAll( async () => {
-        
-        connection = await createConnection();
-        await connection.runMigrations();
+  beforeAll(async () => {
+    connection = await createConnection();
+    await connection.runMigrations();
 
-        const password = await hash("admin", 8);
-        const id = uuid();
+    const id = uuid();
+    const password = await hash("admin", 8);
 
-        await connection.query(
-            `INSERT INTO USERS(id, name, email, password, "isAdmin", created_at, driver_licence)
-        values('${id}', 'admin', 'admin@rentx.com.br', '${password}', true, 'now()', 'XXXXXY')
-        `
-        );
-    
+    await connection.query(
+      `INSERT INTO USERS(id, name, email, password, "isAdmin", created_at, driver_licence ) 
+        values('${id}', 'admin', 'admin@rentx.com.br', '${password}', true, 'now()', 'XXXXXX')
+      `
+    );
   });
 
   afterAll(async () => {
