@@ -24,27 +24,31 @@ import { UsersTokensRepository } from "@modules/accounts/infra/typeorm/repositor
 container.registerSingleton<ICategoriesRepository>(
     "CategoriesRepository",
     CategoriesRepository
-);
-
-container.registerSingleton<ISpecificationsRepository>(
+  );
+  
+  container.registerSingleton<ISpecificationsRepository>(
     "SpecificationsRepository",
     SpecificationsRepository
-);
-
-
-container.registerSingleton<IUsersRepository>(
+  );
+  
+  container.registerSingleton<IUsersRepository>(
     "UsersRepository",
     UsersRepository
-);
-
-container.registerSingleton<ICarsRepository>("CarsRepository", CarsRepository);
-
-container.registerSingleton<ICarsImagesRepository>("CarsImagesRepository", CarsImagesRepository);
-
-container.registerSingleton<IRentalsRepository>("RentalsRepository", RentalsRepository);
-
-container.registerSingleton<IUsersTokensRepository>(
+  );
+  
+  container.registerSingleton<ICarsRepository>("CarsRepository", CarsRepository);
+  
+  container.registerSingleton<ICarsImagesRepository>(
+    "CarsImagesRepository",
+    CarsImagesRepository
+  );
+  
+  container.registerSingleton<IRentalsRepository>(
+    "RentalsRepository",
+    RentalsRepository
+  );
+  
+  container.registerSingleton<IUsersTokensRepository>(
     "UsersTokensRepository",
     UsersTokensRepository
   );
-
